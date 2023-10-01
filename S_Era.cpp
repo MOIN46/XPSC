@@ -13,19 +13,16 @@ int main()
         cin >> n;
         int a[n];
         int mx = 0;
-        int index = 0;
         for (int i = 0; i < n; i++)
         {
             cin >> a[i];
-            if (a[i] > mx)
+
+            if (a[i] - i - 1 > mx)
             {
-                mx = a[i];
-                index = i + 1;
+                mx = a[i] - i - 1;
             }
         }
-        if (mx < index)
-            cout << 0 << endl;
-        else
-            cout << mx - index << endl;
+
+        cout << mx << endl;
     }
 }
