@@ -1,0 +1,14 @@
+void solve_the_problem(int test_case)
+{
+ int n, k;
+    cin >> n >> k;
+    int cnt = 0;
+
+    while (n)
+    {
+        n /= k;
+        cnt++;
+    }
+
+    cout << cnt << endl;
+}
