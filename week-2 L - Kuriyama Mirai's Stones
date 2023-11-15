@@ -1,0 +1,42 @@
+void solve_the_problem(int test_case)
+{
+int n;
+    cin >> n;
+    int a[n];
+    int cums[n];
+    int s = 0;
+    int temp[n];
+    for (int i = 0; i < n; i++)
+    {
+        cin >> a[i];
+        temp[i] = a[i];
+        s += a[i];
+        cums[i] = s;
+    }
+
+    int sum[n];
+
+    sort(temp, temp + n);
+    int ss = 0;
+    for (int i = 0; i < n; i++)
+    {
+        ss += temp[i];
+        sum[i] = ss;
+    }
+
+    int q;
+    cin >> q;
+    while (q--)
+    {
+        int t, i, j;
+        cin >> t >> i >> j;
+        i--, j--;
+        int ans = 0;
+        if (t == 1)
+            ans = cums[j] - cums[i] + a[i];
+        else
+            ans = sum[j] - sum[i] + temp[i];
+
+        cout << ans << endl;
+    }
+}
