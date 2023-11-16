@@ -1,0 +1,32 @@
+void solve_the_problem(int test_case)
+{
+ int H, M, x;
+    char ch;
+    cin >> H >> ch >> M >> x;
+
+    int m = (60 * H) + M;
+    int mm[16] = {0, 601, 70, 671, 1202, 140, 1342, 210, 280, 350, 1272, 1412, 741, 811, 881, 951};
+    sort(mm, mm + 16);
+
+    set<int> st;
+
+    for (int i = 0; i < 2022; i++)
+    {
+        st.insert(m);
+        m += x;
+        m %= 1440;
+    }
+
+    int ans = 0;
+
+    for (int v : st)
+    {
+        for (int i = 0; i < 16; i++)
+        {
+            if (mm[i] == v)
+                ans++;
+        }
+    }
+
+    cout << ans << endl;
+}
