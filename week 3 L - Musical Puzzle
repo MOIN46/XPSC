@@ -1,0 +1,19 @@
+void solve_the_problem(int test_case)
+{
+
+    int n;
+    cin >> n;
+    string s;
+    cin >> s;
+    map<string, int> mp;
+
+    for (int i = 0; i < n - 1; i++)
+    {
+        string ss = "";
+        ss += s[i];
+        ss += s[i + 1];
+        mp[ss]++;
+    }
+
+    cout << mp.size() << endl;
+}
