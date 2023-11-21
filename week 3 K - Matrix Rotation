@@ -1,0 +1,27 @@
+
+void solve_the_problem(int test_case)
+{
+
+    int a, b, c, d;
+    cin >> a >> b >> c >> d;
+    if (a < b && a < c && c < d && b < d)
+    {
+        cout << "YES" << endl;
+    }
+    else if (c < a && c < d && a < b && d < b)
+    {
+        cout << "YES" << endl;
+    }
+    else if (d < c && d < b && b < a && c < a)
+    {
+        cout << "YES" << endl;
+    }
+    else if (b < a && b < d && a < c && d < c)
+    {
+        cout << "YES" << endl;
+    }
+    else
+    {
+        cout << "NO" << endl;
+    }
+}
