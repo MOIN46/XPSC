@@ -1,0 +1,30 @@
+
+void solve_the_problem(int test_case)
+{
+    int n;
+    cin >> n;
+
+    string s;
+    cin >> s;
+
+    int T = 0, i = 0, m = 0, u = 0, r = 0;
+
+    for (int k = 0; k < n; k++)
+    {
+        if (s[k] == 'T')
+            T++;
+        else if (s[k] == 'i')
+            i++;
+        else if (s[k] == 'm')
+            m++;
+        else if (s[k] == 'u')
+            u++;
+        else if (s[k] == 'r')
+            r++;
+    }
+
+    if (T == 1 && i == 1 && m == 1 && u == 1 && r == 1 && n == 5)
+        cout << "YES\n";
+    else
+        cout << "NO\n";
+}
