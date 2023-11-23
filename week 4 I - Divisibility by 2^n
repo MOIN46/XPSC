@@ -1,0 +1,73 @@
+void solve_the_problem(int test_case)
+{
+    int n;
+    cin >> n;
+    int a[n];
+    int cnt = 0;
+    int ans = -1;
+    for (int i = 0; i < n; i++)
+    {
+        cin >> a[i];
+        int v = a[i];
+
+        while (true)
+        {
+            if (v % 2 == 0)
+            {
+                cnt++;
+                v /= 2;
+            }
+            else if (cnt >= n)
+            {
+                ans = 0;
+                break;
+            }
+            else
+            {
+                break;
+            }
+        }
+    }
+    if (cnt < n)
+    {
+
+        vector<int> vc;
+        int c = 0;
+        for (int i = 1; i <= n; i++)
+        {
+            int l = i;
+
+            while (true)
+            {
+                if (i % 2 == 0)
+                {
+                    c++;
+                    i /= 2;
+                }
+                else
+                {
+                    break;
+                }
+            }
+            i = l;
+            if (c != 0)
+                vc.push_back(c);
+            c = 0;
+        }
+
+        sort(vc.rbegin(), vc.rend());
+        int z = 0;
+        for (int x : vc)
+        {
+            cnt += x;
+            z++;
+            if (cnt >= n)
+            {
+                ans = z;
+                break;
+            }
+        }
+    }
+
+    cout << ans << endl;
+}
