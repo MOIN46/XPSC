@@ -1,0 +1,29 @@
+int n;
+        string ch;
+        cin >> n >> ch;
+        string s;
+        cin >> s;
+ 
+        s = s + s;
+ 
+        int maxi = -1;
+        int c = 0, f = 0;
+        for (int i = 0; i < s.size(); i++)
+        {
+            if (s[i] == ch[0] && c == 0)
+            {
+                f = 1;
+            }
+            if (s[i] == 'g')
+            {
+                maxi = max(c, maxi);
+                c = 0;
+                f = 0;
+            }
+            if (f)
+            {
+                c++;
+            }
+        }
+ 
+        cout << maxi << endl;
