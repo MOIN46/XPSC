@@ -1,0 +1,50 @@
+
+void solve_the_problem(int test_case)
+{
+    string s, s1;
+    cin >> s;
+    cin >> s1;
+
+    int l1 = s.size() - 1;
+    int l2 = s1.size() - 1;
+
+    if (s[l1] == s1[l2] && s[l1] == 'S')
+    {
+        if (l1 > l2)
+            cout << "<\n";
+        else if (l1 < l2)
+            cout << ">\n";
+        else
+            cout << "=\n";
+    }
+    else
+    {
+        if (s[l1] == s1[l2] && s[l1] == 'L')
+        {
+            if (l1 < l2)
+                cout << "<\n";
+            else if (l1 > l2)
+                cout << ">\n";
+            else
+                cout << "=\n";
+        }
+        else
+        {
+            if (s[l1] == 'L')
+            {
+                cout << ">\n";
+            }
+            else if (s1[l2] == 'L')
+                cout << "<\n";
+            else
+            {
+                if (s[l1] == s1[l2] && s[l1] == 'M')
+                    cout << "=\n";
+                else if (s[l1] == 'M')
+                    cout << ">\n";
+                else if (s1[l2] == 'M')
+                    cout << "<\n";
+            }
+        }
+    }
+}
