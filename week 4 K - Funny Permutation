@@ -1,0 +1,40 @@
+
+void solve_the_problem(int test_case)
+{
+    int n;
+    cin >> n;
+
+    if (n == 3)
+        cout << -1 << endl;
+    else if (n == 5)
+    {
+        cout << 5 << " " << 4 << " " << 1 << " " << 2 << " "
+             << 3 << endl;
+    }
+    else
+    {
+        int a[n + 1];
+        int nn = n;
+        for (int i = 1; i <= n; i++)
+        {
+            a[i] = nn;
+            nn--;
+        }
+
+        for (int i = 1; i <= n; i++)
+        {
+            if (a[i] == i)
+            {
+                int temp = a[i];
+                a[i] = a[i - 1];
+                a[i - 1] = temp;
+            }
+        }
+
+        for (int i = 1; i <= n; i++)
+        {
+            cout << a[i] << " ";
+        }
+        cout << endl;
+    }
+}
