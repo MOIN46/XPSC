@@ -1,0 +1,65 @@
+void solve_the_problem(int test_case)
+{
+    string s;
+    cin >> s;
+    int cnt = 0;
+
+    int fna[26] = {0};
+    int sum = 0;
+
+    for (int i = 0; i < s.size(); i++)
+    {
+        fna[s[i] - 'a']++;
+        sum = 0;
+        for (int j = 0; j < 26; j++)
+        {
+            if (fna[j])
+                sum++;
+        }
+
+        // cout << sum << " ";
+        if (sum == 3)
+        {
+
+            cnt++;
+            char ch1, ch2, ch3;
+            bool f1 = 1, f2 = 1, f3 = 1;
+            for (int k = 0; k < 26; k++)
+            {
+                if (fna[k] && f1)
+                {
+                    ch1 = k + 'a';
+                    f1 = 0;
+                }
+                else if (fna[k] && f2)
+                {
+                    ch2 = k + 'a';
+                    f2 = 0;
+                }
+                else if (fna[k] && f3)
+                {
+                    ch3 = k + 'a';
+                    f3 = 0;
+                }
+            }
+            for (int j = 0; j < 26; j++)
+            {
+                fna[j] = 0;
+            }
+            for (int j = i + 1; j < s.size(); j++)
+            {
+                if (ch1 == s[j] || ch2 == s[j] || ch3 == s[j])
+                {
+                    i++;
+                }
+                else
+                {
+                    break;
+                }
+            }
+        }
+    }
+    if (sum < 3)
+        cnt++;
+    cout << cnt << endl;
+}
