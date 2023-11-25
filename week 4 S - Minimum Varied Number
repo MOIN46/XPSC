@@ -1,0 +1,29 @@
+
+void solve_the_problem(int test_case)
+{
+    int n;
+    cin >> n;
+    string s = "";
+    int ins = 9;
+
+    int fna[10] = {0};
+
+    while (n != 0)
+    {
+        if (ins <= n && fna[ins] < 1)
+        {
+            s += ins + '0';
+            fna[ins]++;
+            n -= ins;
+            ins = 9;
+        }
+        else
+        {
+            ins--;
+        }
+    }
+
+    reverse(s.begin(), s.end());
+
+    cout << s << endl;
+}
