@@ -1,0 +1,15 @@
+
+void solve_the_problem(int test_case)
+{
+
+    int n;
+    cin >> n;
+    int x = 0, res = n;
+    while (n / 10)
+    {
+        x++;
+        n /= 10;
+    }
+    int ans = res - pow(10, x);
+    cout << ans << "\n";
+}
