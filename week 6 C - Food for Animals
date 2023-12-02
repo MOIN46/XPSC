@@ -1,0 +1,34 @@
+void solve_the_problem(int test_case)
+{
+    int c, d, k, C, D;
+    cin >> c >> d >> k >> C >> D;
+
+    // if (C == 0)
+    // {
+    //     if (d + k >= D)
+    //         cout << "YES\n";
+    //     else
+    //         cout << "NO\n";
+    // }
+    // else if (D == 0)
+    // {
+    //     if (c + k >= C)
+    //         cout << "YES\n";
+    //     else
+    //         cout << "NO\n";
+    // }
+    // else
+    // {
+    int r = C - c;
+    if (r < 0)
+        r = 0;
+    int y = D - d;
+    if (y < 0)
+        y = 0;
+
+    if (r + y <= k)
+        cout << "YES\n";
+    else
+        cout << "NO\n";
+    // }
+}
