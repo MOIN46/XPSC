@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	// your code goes here
+	
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	    int x,y;
+	    cin>>x>>y;
+	    
+	    int a=y-x;
+	    if(a<0)
+	    a=y;
+	    else 
+	    a*=2,a+=x;
+	    
+	    
+	    cout<<a<<endl;
+	    
+	}
+	return 0;
+}
