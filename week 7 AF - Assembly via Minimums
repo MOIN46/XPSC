@@ -1,0 +1,56 @@
+/**
+ *    author:  MOIN46
+ *          --MD:MOIN UDDIN BHUYAIN TUHIN
+ *          --CSE,BRUR
+ *          --Email:cse118199brur@gmail.com
+ **/
+
+#include <bits/stdc++.h>
+#define F first
+#define S second
+#define PB push_back
+#define MP make_pair
+#define vec vector<int>
+#define sp " "
+#define el "\n"
+#define SQ(a) a *a
+#define EPS 1E-9
+#define PI acos(-1)
+#define ll long long int
+#define loop(i, n) for (int i = 0; i < n; i++)
+#define p(condition) cout << (condition ? "YES" : "NO")
+#define me ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0)
+using namespace std;
+
+const int NN = 1e9;
+
+int main()
+{
+    me;
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        int n;
+        cin >> n;
+        int N = ((n - 1) * n) / 2;
+        int a[N];
+        set<int> st;
+        vector<int> v;
+        for (int i = 0; i < N; i++)
+        {
+            cin >> a[i];
+            st.insert(a[i]);
+        }
+
+        sort(a, a + N);
+        int index = 0;
+        for (int i = 0; i < n - 1; i++)
+        {
+            cout << a[index] << " ";
+            index += n - i - 1;
+        }
+
+        cout << NN << endl;
+    }
+}
